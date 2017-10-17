@@ -71,7 +71,7 @@ int main(int argc, char* argv[]) {
 
 	//SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 	SDL_UpdateTexture(texture, NULL, buffer, SCREEN_WIDTH*sizeof(Uint32));
-	//SDL_SetTextureColorMod(texture, 0, 97, 255);
+	SDL_SetTextureColorMod(texture, 0, 97, 255);
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, texture, NULL, NULL);
 	SDL_RenderPresent(renderer);

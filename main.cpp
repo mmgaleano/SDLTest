@@ -32,11 +32,10 @@ int main(int argc, char* argv[]) {
 		while (true) {
 			// Update particles
 
-			screen.clear();
-			swarm.update();
-
 			//Returns the num of miliseconds since the program started
 			int elapsed = SDL_GetTicks();
+
+			swarm.update(elapsed);
 
 			unsigned char red = (1 + sin(elapsed * 0.0001)) * 128;
 			unsigned char green = (1 + sin(elapsed * 0.0002)) * 128;
@@ -52,6 +51,8 @@ int main(int argc, char* argv[]) {
 
 				screen.setPixel(x, y, red, green, blue);
 			}
+
+			screen.boxBlur();
 
 			// Draw the screen
 			screen.update();
